@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA VI — Live Dump &amp; PC Port Tracker</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💾</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">VI</div>
+    <div>
+      <h1>GTA VI <span class="x">→</span> <span class="accent">Dump &amp; PC Port</span></h1>
+      <p class="subtitle">Live file-dump progress since release day (<span id="min-date">19 Nov 2026</span>) — from X, Reddit &amp; scene forums</p>
+    </div>
+  </div>
+  <div class="top-status">
+    <span id="live-dot" class="dot off"></span>
+    <span id="live-label">connecting…</span>
+    <span class="sep">·</span>
+    <span id="last-poll">no poll yet</span>
+  </div>
+</header>
+
+<main>
+  <section class="progress-grid">
+    <article class="card progress-card">
+      <div class="card-head">
+        <h2>💾 GTA VI Dump → PC</h2>
+        <div class="big-pct" id="pct-dump">0%</div>
+      </div>
+      <div class="bar"><div class="bar-fill dump" id="bar-dump"></div></div>
+      <ul class="milestones" id="ms-dump"></ul>
+    </article>
+    <article class="card stats-card">
+      <h2>🗓️ Release-day watch</h2>
+      <div class="stat-row"><span class="stat-num" id="stat-posts">0</span><span class="stat-label">on-topic posts since release</span></div>
+      <div class="stat-row"><span class="stat-num" id="stat-trusted">0</span><span class="stat-label">posts from trusted sources / with evidence</span></div>
+      <div class="stat-row"><span class="stat-num" id="stat-next">—</span><span class="stat-label">next automatic refresh</span></div>
+      <p class="hint">Only posts dated <b><span class="min-date-echo">19 Nov 2026</span> or newer</b> are accepted, and only if they are about <b>GTA VI game files, dumps, decryption, reverse engineering or the PC port</b>. Community sources only — no news sites or magazines.</p>
+    </article>
+  </section>
+
+  <section class="card overall-card">
+    <div class="overall-left">
+      <span class="overall-label">Overall route to “GTA VI on PC”</span>
+      <div class="bar big"><div class="bar-fill overall" id="bar-overall"></div></div>
+    </div>
+    <div class="big-pct overall-pct" id="pct-overall">0%</div>
+  </section>
+
+  <section class="controls card">
+    <input type="search" id="search" placeholder="Search posts… (e.g. dump, pkg, decrypt, pc port)">
+    <div class="chips" id="chips">
+      <button class="chip active" data-f="all">All</button>
+      <button class="chip" data-f="trusted">🟢 Trusted</button>
+      <button class="chip" data-f="rumours">❓ Rumours</button>
+      <button class="chip" data-f="dump">💾 Dump</button>
+      <button class="chip" data-f="re">🔬 Reverse engineering</button>
+      <button class="chip" data-f="pc">🖥️ PC port</button>
+      <button class="chip" data-f="emu">🎮 Emulators</button>
+      <button class="chip cyberleek-chip" data-f="cyberleek"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c-1 4-1 7 0 10" stroke="#8fd694" stroke-width="2" stroke-linecap="round"/><path d="M8.5 4c0 3 1.2 5.2 3.5 8" stroke="#4a9e52" stroke-width="2" stroke-linecap="round"/><path d="M15.5 4c0 3-1.2 5.2-3.5 8" stroke="#4a9e52" stroke-width="2" stroke-linecap="round"/><path d="M10 12h4l1 7c0 1.2-1.2 2.2-3 2.2s-3-1-3-2.2l1-7z" fill="#f5f0e6"/></svg> Cyberleek</button>
+      <button class="chip" data-f="twitter">𝕏 Twitter</button>
+      <button class="chip" data-f="reddit">👽 Reddit</button>
+      <button class="chip" data-f="rss">📰 Forums</button>
+      <button class="chip" data-f="github">🐙 GitHub</button>
+    </div>
+  </section>
+
+  <section class="feed-wrap">
+    <div class="feed-head">
+      <h2>Live feed</h2>
+      <span id="feed-count" class="muted"></span>
+    </div>
+    <div id="feed" class="feed"></div>
+    <div id="pagination" class="pagination"></div>
+  </section>
+
+  <section class="card legend-card">
+    <h2>How to read this tracker</h2>
+    <p class="hint">
+      <span class="cred trusted">🟢 trusted</span> known scene developers or posts with concrete evidence (repos, hashes, screenshots, file sizes) ·
+      <span class="cred community">🟡 community</span> established scene forums or partially supported claims ·
+      <span class="cred unverified">🔴 unverified</span> anonymous or rumor-language posts — treat as speculation ·
+      <span class="cred old-build">📦 likely old build</span> Cyberleek-style releases: footage/build may be authentic but outdated or unverified (his Aug-2026 leak was wrapped in a memecoin scam) ·
+      <span class="cred fake">⛔ likely fake</span> rumor language plus technically impossible claims (e.g. PS5 firmware rollback) — excluded from milestone evidence.
+      Credibility is a heuristic, not fact-checking. Steps are <b>weighted by difficulty</b> — decrypting, reverse engineering and porting count far more than the initial dump.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <span>Aggregates public posts only. No game files, keys or copyrighted content are hosted or distributed here.</span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
