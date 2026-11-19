@@ -10,6 +10,8 @@ pinned: false
 
 # GTA VI — Live Dump & PC Port Tracker
 
+**Live demo: https://gta6-tracker.onrender.com** (free Render hosting, auto-deploys from this repo)
+
 A **live, read-only, public-facing** dashboard tracking one thing: **GTA VI game files
 getting dumped, decrypted, reverse engineered and ported to PC**.
 Community sources only — **Reddit, X/Twitter and scene forums**. No news sites, no magazines,
