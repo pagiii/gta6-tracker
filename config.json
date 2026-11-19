@@ -1,0 +1,86 @@
+{
+  "port": 3090,
+  "host": "127.0.0.1",
+  "pollMinutes": 5,
+  "minDate": "2026-11-19",
+
+  "blocklist": ["alan-r-henry/gta6-pc-tracker", "gta6-pc-tracker"],
+
+  "autoProgress": true,
+  "progress": {
+    "dump-files": "confirmed",
+    "exe-obtain": "auto",
+    "dump-verify": "auto",
+    "pc-re": "auto",
+    "pc-project": "auto",
+    "pc-playable": "auto"
+  },
+
+  "reddit": {
+    "subreddits": ["ps4homebrew", "GamingLeaksAndRumours"],
+    "query": "\"gta 6 dump\" OR \"gta vi dump\" OR \"gta 6 dumped\" OR \"gta vi dumped\" OR \"gta 6 files\" OR \"gta vi files\" OR \"gta 6 pc port\" OR \"gta vi pc\" OR \"gta 6 leaked build\" OR \"gta vi decrypt\" OR \"gta 6 rollback\" OR \"cyberleek\" OR \"14.23\""
+  },
+
+  "twitter": {
+    "perPoll": 2,
+    "nitter": "https://nitter.cz",
+    "trusted": ["theflow0", "SpecterDev", "ChendoChap", "flat_z", "idlesauce", "notzecoxao", "couldbeautism", "Gezine", "Znullptr", "oct0xor", "tuxuser"],
+    "accounts": [
+      "couldbeautism",
+      "Gezine",
+      "GTA6Intel",
+      "notzecoxao",
+      "idlesauce",
+      "theflow0",
+      "SpecterDev",
+      "ChendoChap",
+      "flat_z",
+      "Znullptr",
+      "oct0xor",
+      "tuxuser"
+    ]
+  },
+
+  "github": {
+    "queries": ["gta 6 dump", "gta6 pc port", "gta6 reverse engineering", "gta 6 emulator", "gta vi decrypt", "gta 6 xbox"],
+    "contributorsPerPoll": 3,
+    "contributors": [
+      "oneandonlydean", "adriadam10", "MarcZX10", "boykopovar", "EagleBearerYS",
+      "JJenkx", "xXPBSXx", "milescoviello", "alvaroelpob", "kyon-eth",
+      "Nmzik", "claxten10", "Senaxx", "MrBigBritches", "Nawid3333",
+      "shadowbeat070", "defektu", "Pipe530", "brandostrong", "TheCruZ",
+      "par274", "xnetcat", "foufouadi", "MattiSouls", "MarcelMediaDev",
+      "MikeSaito", "Spooks4576", "kostyaff", "Astellou", "freakdaniel",
+      "tuxuser", "XboxDev"
+    ]
+  },
+
+  "discovery": [
+    {
+      "name": "Reddit · Cyberleek",
+      "source": "reddit",
+      "url": "https://news.google.com/rss/search?q=cyberleek+site:reddit.com+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "X · Cyberleek",
+      "source": "twitter",
+      "url": "https://news.google.com/rss/search?q=cyberleek+site:x.com+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Reddit · dumps",
+      "source": "reddit",
+      "url": "https://news.google.com/rss/search?q=(%22gta+6+dump%22+OR+%22gta+vi+dump%22+OR+%22gta+6+decrypted%22+OR+%22gta+6+leaked+build%22)+site:reddit.com+when:1d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "X · dumps",
+      "source": "twitter",
+      "url": "https://news.google.com/rss/search?q=(%22gta+6+dump%22+OR+%22gta+vi+dump%22+OR+%22gta+6+decrypted%22+OR+%22gta+6+leaked+build%22)+site:x.com+when:1d&hl=en-US&gl=US&ceid=US:en"
+    }
+  ],
+
+  "rss": [
+    { "name": "Wololo.net", "url": "https://wololo.net/feed/" },
+    { "name": "PSXHAX", "url": "https://psxhax.com/forums/-/index.rss" },
+    { "name": "GBAtemp", "url": "https://gbatemp.net/forums/-/index.rss" }
+  ]
+}
