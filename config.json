@@ -4,7 +4,7 @@
   "pollMinutes": 15,
   "minDate": "2026-11-19",
 
-  "blocklist": ["alan-r-henry/gta6-pc-tracker", "gta6-pc-tracker"],
+  "blocklist": ["alan-r-henry/gta6-pc-tracker", "gta6-pc-tracker", "pagiii/gta6-tracker"],
 
   "autoProgress": true,
   "progress": {
