@@ -490,6 +490,8 @@ function publicState() {
     nextPollAt: state.lastPollAt ? new Date(new Date(state.lastPollAt).getTime() + POLL_MS).toISOString() : null,
     pollCount: state.pollCount,
     polling,
+    twitterCursor: state.twitterCursor || 0,
+    githubCursor: state.githubCursor || 0,
     milestones,
     progress: computeProgress(milestones),
     items: state.items.slice(0, 300)
@@ -810,4 +812,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { classify, credibility, isBlocked, isBlockedUrl, deriveAutoStatus, NEG_EXE_RE, normText, tokenSet, jaccard, MILESTONES, TRUSTED_X };
+module.exports = { classify, credibility, isBlocked, isBlockedUrl, deriveAutoStatus, NEG_EXE_RE, normText, tokenSet, jaccard, MILESTONES, TRUSTED_X, poll, publicState };
