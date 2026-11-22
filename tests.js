@@ -313,6 +313,16 @@ const cases = [
     expect: true
   },
 
+  {
+    name: 'Leonida recompilation repo recognized as RE progress',
+    fn: () => {
+      const item = { source: 'github', title: 'ItsNotRexed/Leonida — Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6', text: 'Python · 11531 stars' };
+      const c = classify(item);
+      return c.relevant === true && c.tags.includes('re');
+    },
+    expect: true
+  },
+
   // --- near-duplicate suppression ---
   {
     name: 'Jaccard: same story reworded',
