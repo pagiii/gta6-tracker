@@ -10,7 +10,10 @@ pinned: false
 
 # GTA VI — Live Dump & PC Port Tracker
 
-**Live demo: https://gta6-tracker.onrender.com** (free Render hosting, auto-deploys from this repo)
+**Live demo: https://pagiii.github.io/gta6-tracker/** — hosted 100% free on GitHub:
+a GitHub Actions cron (`.github/workflows/tracker.yml`) runs `poll-cli.js` every 15 min,
+polls all sources, and deploys the static dashboard + `state.json` to GitHub Pages.
+No server required; the page auto-refreshes its data every 60 s.
 
 A **live, read-only, public-facing** dashboard tracking one thing: **GTA VI game files
 getting dumped, decrypted, reverse engineered and ported to PC**.
