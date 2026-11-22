@@ -8,8 +8,6 @@ let page = 1;
 const PAGE_SIZE = 24;
 let knownIds = new Set();
 let firstRender = true;
-let es = null;
-let fallbackTimer = null;
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -37,29 +35,12 @@ function fmtDate(iso) {
 
 async function fetchState() {
   try {
-    const r = await fetch('/api/state', { cache: 'no-store' });
+    const r = await fetch('state.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
     applyState(await r.json());
-  } catch (e) { setLive(false, 'server unreachable'); }
+    setLive(true, 'auto-refresh');
+  } catch (e) { setLive(false, 'offline — retrying'); }
 }
-
-function connectSSE() {
-  try { es = new EventSource('/api/events'); } catch { startFallback(); return; }
-  es.onmessage = ev => {
-    try {
-      const msg = JSON.parse(ev.data);
-      if (msg.type === 'state') { setLive(true, 'live'); applyState(msg.state); }
-    } catch { /* ignore */ }
-  };
-  es.onopen = () => { setLive(true, 'live'); stopFallback(); };
-  es.onerror = () => { setLive(false, 'reconnecting…'); startFallback(); };
-}
-
-function startFallback() {
-  if (fallbackTimer) return;
-  fallbackTimer = setInterval(fetchState, 30_000);
-  fetchState();
-}
-function stopFallback() { if (fallbackTimer) { clearInterval(fallbackTimer); fallbackTimer = null; } }
 
 function setLive(on, label) {
   $('live-dot').className = 'dot ' + (on ? 'on' : 'off');
@@ -217,5 +198,6 @@ $('search').addEventListener('input', e => { query = e.target.value.trim(); page
 /* keep timestamps fresh */
 setInterval(() => { if (S) render(); }, 30_000);
 
+/* static hosting: refresh data every 60s (poller runs via GitHub Actions cron) */
+setInterval(fetchState, 60_000);
 fetchState();
-connectSSE();
