@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GTA VI — Live Dump &amp; PC Port Tracker</title>
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💾</text></svg>">
 </head>
 <body>
@@ -40,6 +40,21 @@
       <div class="stat-row"><span class="stat-num" id="stat-trusted">0</span><span class="stat-label">posts from trusted sources / with evidence</span></div>
       <div class="stat-row"><span class="stat-num" id="stat-next">—</span><span class="stat-label">next automatic refresh</span></div>
       <p class="hint">Only posts dated <b><span class="min-date-echo">19 Nov 2026</span> or newer</b> are accepted, and only if they are about <b>GTA VI game files, dumps, decryption, reverse engineering or the PC port</b>. Community sources only — no news sites or magazines.</p>
+      <div class="context-box">
+        <h3>📌 Key events &amp; trusted sources</h3>
+        <div class="ctx-entry">
+          <span class="ctx-date">17 Nov 2026</span>
+          <p><b>FW 14.23 becomes mandatory.</b> Sony's update 26.07-14.23.00 is required to run GTA VI. Public PS5 jailbreaks reach only 13.60 — so the PS5 dumping route stays blocked until a new exploit surfaces.</p>
+        </div>
+        <div class="ctx-entry">
+          <span class="ctx-date">19 Nov 2026 · release day</span>
+          <p><b>Cyberleek publishes a ~209 GB Xbox Series build (1.0.2.1)</b> on his decentralized site — reportedly complete except the main <b>.exe</b>, held behind a countdown / token market-cap condition and later offered for $40. Dozens of independent posts corroborate the files; comparisons suggest an older dev build, and the operation is tied to a $CYBERLEEK memecoin. English text dumps from the build already appear on GitHub. <a href="https://www.reddit.com/r/pcmasterrace/comments/1y0ihk9/cyberleek_just_dropped_a_gta_6_xbox_build_without/" target="_blank" rel="noopener">Discussion ↗</a></p>
+        </div>
+        <div class="ctx-entry">
+          <span class="ctx-date">22 Nov 2026 · 11.5k ★</span>
+          <p><b>Leonida</b> — native PC recompilation of the Xbox version: the console's x86-64 code runs natively, its system software is reimplemented, and <b>all 26,503 RDNA2 shaders are translated to SPIR-V</b> and validated. Early stage — the game does not boot yet; everything possible without the .exe is done, and boot work starts once one is available. The repo contains no game files, keys or executable. <a href="https://github.com/ItsNotRexed/Leonida" target="_blank" rel="noopener">GitHub ↗</a></p>
+        </div>
+      </div>
     </article>
   </section>
 
@@ -95,6 +110,6 @@
   <span>Aggregates public posts only. No game files, keys or copyrighted content are hosted or distributed here.</span>
 </footer>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
