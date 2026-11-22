@@ -214,6 +214,20 @@ footer { text-align: center; color: var(--muted); font-size: 11.5px; padding: 0 
 }
 .stat-label { color: var(--muted); font-size: 13px; }
 
+/* ---------- key events & trusted sources box ---------- */
+.context-box { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+.context-box h3 { font-size: 13.5px; margin-bottom: 2px; }
+.ctx-entry { background: var(--card2); border: 1px solid var(--line); border-radius: 12px; padding: 9px 12px; }
+.ctx-date {
+  display: inline-block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px;
+  color: var(--cyan); background: rgba(34, 211, 238, .1); border: 1px solid rgba(34, 211, 238, .3);
+  border-radius: 99px; padding: 2px 9px; margin-bottom: 5px;
+}
+.ctx-entry p { color: var(--muted); font-size: 12.5px; line-height: 1.55; }
+.ctx-entry p b { color: var(--text); }
+.ctx-entry a { color: var(--cyan); text-decoration: none; white-space: nowrap; }
+.ctx-entry a:hover { text-decoration: underline; }
+
 /* ---------- fit guards: nothing may push the page wider than the viewport ---------- */
 body { overflow-x: clip; }
 .progress-grid > * { min-width: 0; }
