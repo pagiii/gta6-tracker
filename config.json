@@ -1,7 +1,7 @@
 {
   "port": 3090,
   "host": "127.0.0.1",
-  "pollMinutes": 5,
+  "pollMinutes": 15,
   "minDate": "2026-11-19",
 
   "blocklist": ["alan-r-henry/gta6-pc-tracker", "gta6-pc-tracker"],
