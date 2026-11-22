@@ -235,7 +235,7 @@ function parseTwitterTimeline(html, account) {
 
 const GTA_RE = /\b(gta[\s-]?(6|vi|six)|grand theft auto)\b/i;
 const DUMP_RE = /\b(dump(s|ed|ing)?|decrypt(ed|ion|able)?|\.pkg|leak(ed)?\s+(files|build)|game\s+files|data\s+files|disc\s+image|rip(s|ped)?|extract(ed|ing|ion)?|full\s+(game|dump))\b/i;
-const RE_RE = /\b(reverse[ -]?engineer\w*|reversing|formats?\s+(documented|cracked|figured|understood)|engine\s+(reversed|analysis|internals)|decompil\w*)\b/i;
+const RE_RE = /\b(reverse[ -]?engineer\w*|reversing|recomp\w*|formats?\s+(documented|cracked|figured|understood)|engine\s+(reversed|analysis|internals)|decompil\w*)\b/i;
 const PC_RE = /\b(pc\s+port|pc\s+build|pc\s+version|windows\s+(build|port|version)|port\w*\s+to\s+pc|on\s+pc)\b/i;
 const PC_WORK_RE = /\b(port(ed|ing|s)?|build|boot(s|ed|ing)?|run(s|ning)?|playable|progress|working|works|released|repo(sitory)?|source\s+code|tool|patch|emulat\w*)\b/i;
 const WAITING_RE = /\b(waiting|wait\s+for|can'?t\s+wait|when\s+(will|is|does)|release\s+date|comes?\s+to\s+pc|coming\s+to\s+pc|hoping|hope\b|wish|will\s+it)\b/i;
