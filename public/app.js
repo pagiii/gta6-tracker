@@ -22,7 +22,8 @@ function timeAgo(iso) {
 }
 function timeUntil(iso) {
   if (!iso) return '—';
-  const s = Math.max(0, (new Date(iso).getTime() - Date.now()) / 1000);
+  const s = (new Date(iso).getTime() - Date.now()) / 1000;
+  if (s <= 0) return 'due now';
   if (s < 60) return Math.floor(s) + 's';
   return Math.floor(s / 60) + 'm ' + Math.floor(s % 60) + 's';
 }
@@ -197,6 +198,14 @@ $('search').addEventListener('input', e => { query = e.target.value.trim(); page
 
 /* keep timestamps fresh */
 setInterval(() => { if (S) render(); }, 30_000);
+
+/* live countdown — ticks every second without a page refresh */
+function updateClocks() {
+  if (!S) return;
+  $('last-poll').textContent = S.polling ? 'polling…' : 'last poll ' + timeAgo(S.lastPollAt);
+  $('stat-next').textContent = S.polling ? 'now' : timeUntil(S.nextPollAt);
+}
+setInterval(updateClocks, 1000);
 
 /* static hosting: refresh data every 60s (poller runs via GitHub Actions cron) */
 setInterval(fetchState, 60_000);
